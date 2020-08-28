@@ -28,7 +28,7 @@ select nome, cargo from funcionario where codgerente is null;
 
 select nome from funcionario where nome like '_A%';
 
-select * from funcionario where nome like '%A%A%' and departamento = 30 or codgerente = 7529 order by coddepartamento desc;
+select * from funcionario where nome like '%A%A%' and (departamento = 30 or codgerente = 7529) order by coddepartamento desc;
 
 update funcionario
 set salario = (salario + 300)
