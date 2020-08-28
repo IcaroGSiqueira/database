@@ -1,4 +1,4 @@
-create database ucpel;
+#create database ucpel;
 
 use ucpel;
 
@@ -19,7 +19,7 @@ alter table aluno add column idade numeric (3);
 create table disciplina(
 	cod numeric (6),
 	nome varchar (200),
-	cargaHoraria int (3)
+	cargaHoraria numeric (3)
 );
 
 alter table disciplina add column turma numeric (4);
@@ -59,8 +59,8 @@ alter table funcionario add column dtcontratacao timestamp;
 alter table funcionario add column codgerente numeric (6);
 
 
-#drop table aluno;
-#drop table matricula;
-#drop table disciplina;
-#drop table funcionario;
-#drop table departamento;
+drop table aluno;
+drop table matricula;
+drop table disciplina;
+drop table funcionario;
+drop table departamento;
