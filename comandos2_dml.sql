@@ -92,13 +92,13 @@ insert into departamento values(5468126,'pos grad','PPG');
 insert into departamento values(5405621,'organizacao','ucp');
 
 
-insert into funcionario values(1634650,'seguranca1','seg',6568,5405621,null,7465416);
+insert into funcionario values(1634650,'seguranca1','seg',10,5405621,null,7465416);
 
-insert into funcionario values(1634651,'secretario1','sec',7834,5405621,null,7465416);
+insert into funcionario values(1634651,'secretario1','sec',100,5405621,null,7465416);
 
-insert into funcionario values(1634652,'faxineiro1','faxi',5667,5405621,null,7465416);
+insert into funcionario values(1634652,'faxineiro1','faxi',1000,5405621,null,7465416);
 
-insert into funcionario values(1634652,'professor1','prof',6453,5468126,null,7465416);
+insert into funcionario values(1634652,'professor1','prof',10000,5468126,null,7465416);
 
 
 insert into matricula values(201810420,369084,null);

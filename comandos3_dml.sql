@@ -30,6 +30,14 @@ select nome from funcionario where nome like '_A%';
 
 select * from funcionario where nome like '%A%A%' and departamento = 30 or codgerente = 7529 order by coddepartamento desc;
 
-update funcionario set salario = (salario + 300) where salario < 700;
+update funcionario
+set salario = (salario + 300)
+where salario < 700;
 
-update funcionario set salario = (salario + 300) where coddepartamento = 20;
+update funcionario
+set salario = (salario + 15*salario/100)
+where coddepartamento = 20;
+
+DELETE FROM funcionario 
+WHERE
+    nome = 'faxi1';
