@@ -1,10 +1,7 @@
-insert into aluno (matricula,nome,telefone,cidade,email,idade) values(123,'MARIA',1199,'PELOTAS','maria@teste',20);
-
-insert into aluno (matricula,nome,telefone,cidade,email,idade) values(123,'JOAO',45332,'PELOTAS','joao@teste',21);
-
-insert into aluno (matricula,nome,telefone,cidade,email,idade) values(123,'JOSE',45332,'BAGE','jose@teste',22);
-
-insert into aluno (matricula,nome,telefone,cidade,email,idade) values(123,'MARIA',1199,'PELOTAS','maria@teste',20);
+insert into aluno (nome,telefone,cidade,email,idade) values('MARIA',1199,'PELOTAS','maria@teste',20);
+insert into aluno (nome,telefone,cidade,email,idade) values('JOAO',45332,'PELOTAS','joao@teste',21);
+insert into aluno (nome,telefone,cidade,email,idade) values('JOSE',45332,'BAGE','jose@teste',22);
+insert into aluno (nome,telefone,cidade,email,idade) values('MARIA',1199,'PELOTAS','maria@teste2',20);
 
 alter table aluno add primary key (matricula);
 
@@ -62,55 +59,32 @@ create table funcionario(
 
 
 insert into aluno values(201810420,'GABRIEL ZOPPO',null,null,'PELOTAS','gabriel.zoppo@sou.ucpel.edu.br',19);
-
 insert into aluno values(201810763,'GUILHERME CARVALHO',991919191,null,null,'guilherme.carvalho@sou.ucpel.edu.br',null);
-
 insert into aluno values(201810644,'GUILHERME BACCARIN',991010101,null,'PELOTAS','guilherme.baccarin@sou.ucpel.edu.br',null);
-
 insert into aluno values(201810938,'HELENA TAVARES',991555555,null,'PELOTAS','helena.tavares@sou.ucpel.edu.br',null);
-
 insert into aluno values(201810695,'ICARO SIQUEIRA',null,null,'SAO LOURENCO DO SUL','icaro.siqueira@sou.ucpel.edu.br',21);
-
 insert into aluno values(201811057,'MATHEUS STIGGER',null,null,'SAO LOURENCO DO SUL','matheus.goncalves@sou.ucpel.edu.br',20);
 
-
 insert into disciplina values(369084,'PROBABILIDADE E ESTATÍSTICA',60,123,8);
-
 insert into disciplina values(369085,'SISTEMAS DE CONTROLE',60,123,8);
-
 insert into disciplina values(369078,'SISTEMAS DIGITAIS I',60,123,7);
-
 insert into disciplina values(369038,'PROGRAMAÇÃO ORIENTADA A OBJETOS',60,123,6);
-
 insert into disciplina values(369066,'ARQUITETURA E ORGANIZAÇÃO DE COMPUTADORES',30,123,8);
-
 insert into disciplina values(369072,'PROJETO INTEGRADOR V',30,123,8);
 
-
 insert into departamento values(5468126,'pos grad','PPG');
-
 insert into departamento values(5405621,'organizacao','ucp');
 
-
 insert into funcionario values(1634650,'seguranca1','seg',10,5405621,null,7465416);
-
 insert into funcionario values(1634651,'secretario1','sec',100,5405621,null,7465416);
-
-insert into funcionario values(1634652,'faxineiro1','faxi',1000,5405621,null,7465416);
-
+insert into funcionario values(7465416,'faxineiro1','faxi',1000,5405621,null,7465416);
 insert into funcionario values(1634652,'professor1','prof',10000,5468126,null,7465416);
 
-
 insert into matricula values(201810420,369084,null);
-
 insert into matricula values(201810763,369085,null);
-
 insert into matricula values(201810644,369078,null);
-
 insert into matricula values(201810938,369038,null);
-
 insert into matricula values(201810695,369066,null);
-
 insert into matricula values(201811057,369072,null);
 
 #############################################################################

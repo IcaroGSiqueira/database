@@ -24,8 +24,6 @@ create table matricula (
 	matriculaaluno int(10),
 	cod_disciplina int(10),
     dtefetivado timestamp,
-    foreign key(matriculaaluno) references aluno (matricula), 
-    foreign key(cod_disciplina) references disciplina (cod) 
 );
 
 
