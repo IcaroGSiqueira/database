@@ -37,7 +37,3 @@ where salario < 700;
 update funcionario
 set salario = (salario + 15*salario/100)
 where coddepartamento = 20;
-
-DELETE FROM funcionario 
-WHERE
-    nome = 'faxi1';
