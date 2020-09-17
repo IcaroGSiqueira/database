@@ -43,12 +43,12 @@ where idade between 31 and 100;
 select nome, nivel from faixaNivel;
 
 -- D.
-
 select disciplina.nome , count(aluno.matricula) from matricula right join aluno on matricula.matriculaaluno = aluno.matricula
 right join disciplina on disciplina.cod = matricula.cod_disciplina 
 group by matricula.cod_disciplina
 order by matricula.cod_disciplina;
 
+-- E.
 select aluno.nome, disciplina.nome from disciplina left join matricula on matricula.cod_disciplina = disciplina.cod 
 left join aluno on aluno.matricula = matricula.matriculaaluno 
 group by matricula.cod_disciplina
