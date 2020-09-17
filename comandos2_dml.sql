@@ -71,6 +71,8 @@ insert into disciplina values(369078,'SISTEMAS DIGITAIS I',60,123,7);
 insert into disciplina values(369038,'PROGRAMAÇÃO ORIENTADA A OBJETOS',60,123,6);
 insert into disciplina values(369066,'ARQUITETURA E ORGANIZAÇÃO DE COMPUTADORES',30,123,8);
 insert into disciplina values(369072,'PROJETO INTEGRADOR V',30,123,8);
+insert into disciplina values(369000,'dependencia teste',30,123,8);
+
 
 insert into departamento values(5468126,'pos grad','PPG');
 insert into departamento values(5405621,'organizacao','ucp');
