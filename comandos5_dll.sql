@@ -43,14 +43,29 @@ where idade between 31 and 100;
 select nome, nivel from faixaNivel;
 
 -- D.
-select disciplina.nome , count(aluno.matricula) from matricula right join aluno on matricula.matriculaaluno = aluno.matricula
-right join disciplina on disciplina.cod = matricula.cod_disciplina 
+select disciplina.nome , count(aluno.matricula) from disciplina right join matricula on disciplina.cod = matricula.cod_disciplina 
+left join aluno on matricula.matriculaaluno = aluno.matricula 
 group by matricula.cod_disciplina
 order by matricula.cod_disciplina;
 
 -- E.
-select aluno.nome, disciplina.nome from disciplina left join matricula on matricula.cod_disciplina = disciplina.cod 
-left join aluno on aluno.matricula = matricula.matriculaaluno 
+select aluno.nome, disciplina.nome from aluno right join matricula on aluno.matricula = matricula.matriculaaluno 
+left join disciplina on matricula.cod_disciplina = disciplina.cod 
+group by matricula.matriculaaluno 
+order by matricula.matriculaaluno;
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+
+-- Faça retornar o nome do gerente e o nome do funcionário O funcionario que não possuir gerente deve aparecer também.
+-- Faça uma consulta que retorne os nomes dos funcionários e os nomes dos alunos, ordenados de forma decrescente. Os nomes duplicados devem aparecer
+-- A mesma consulta acima, sem duplicar nomes.
+-- Faça retornar na mesma coluna o nome do aluno e o nome da disciplina sem repetições de nomes.
+-- Faça um único select, que reproduza os inserts existentes nas tabelas Funcionário e Aluno, gerando o resultado no formato de script para ser executado em outra base de dados.
+
+
+select funcionario.nome ,  from disciplina right join matricula on disciplina.cod = matricula.cod_disciplina 
+left join aluno on matricula.matriculaaluno = aluno.matricula 
 group by matricula.cod_disciplina
 order by matricula.cod_disciplina;
+
 
