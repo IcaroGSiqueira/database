@@ -20,7 +20,7 @@ group by aluno.nome;
 
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-
+-- A.
 SELECT departamento.descricao , departamento.sigla, count(funcionario.cod) nFuncionarios, avg(funcionario.salario) mediaSalario FROM departamento 
 left join funcionario on funcionario.coddepartamento = departamento.cod group by departamento.cod ;
 
