@@ -49,10 +49,10 @@ group by matricula.cod_disciplina
 order by matricula.cod_disciplina;
 
 -- D
--- select d.id,d.nome, coalesce(count(a.matricula),0) numero_alunos from disciplina d left join matricula m on m.cod_disciplina = d.id
--- left join aluno a on a.matricula = m.matricula_id
--- group by d.id
--- order by d.id;
+select disciplina.cod ,disciplina.nome, coalesce(count(aluno.matricula),0) n_alunos from disciplina left join matricula on matricula.cod_disciplina = disciplina.cod 
+left join aluno on aluno.matricula = matricula.matriculaaluno 
+group by disciplina.cod 
+order by disciplina.cod;
 
 -- E.
 select aluno.nome, disciplina.nome from aluno right join matricula on aluno.matricula = matricula.matriculaaluno 
@@ -62,13 +62,8 @@ order by matricula.matriculaaluno;
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
 
--- Faça retornar o nome do gerente e o nome do funcionário O funcionario que não possuir gerente deve aparecer também.
--- Faça uma consulta que retorne os nomes dos funcionários e os nomes dos alunos, ordenados de forma decrescente. Os nomes duplicados devem aparecer
--- A mesma consulta acima, sem duplicar nomes.
--- Faça retornar na mesma coluna o nome do aluno e o nome da disciplina sem repetições de nomes.
--- Faça um único select, que reproduza os inserts existentes nas tabelas Funcionário e Aluno, gerando o resultado no formato de script para ser executado em outra base de dados.
-
 -- 01
+select funcionario.nome , coalesce(gerente.nome," Sem gerente ") gerente from funcionario left join gerente on gerente.codgerente = funcionario.cod_gerente;
 
 -- 02
 select funcionario.nome, funcionario.nome from aluno union all
@@ -79,12 +74,16 @@ select aluno.nome from aluno union
 select funcionario.nome from funcionario;
 
 -- 04
+select concat(aluno.nome , " está matriculado em: ", coalesce(disciplina.nome,"Nenhuma disciplina ")) from aluno 
+left join matricula on matricula.matriculaaluno = aluno.matricula 
+left join disciplina on disciplina.cod = matricula.cod_disciplina;
 
 -- 05
 select concat("insert into aluno (nome,telefone,cidade,email,idade) values (", aluno.nome, " ," ,
 aluno.telefone, " ,", aluno.cidade, " ," ,aluno.email, " ,", aluno.cidade, ");")
 from aluno union all 
-select concat("insert into funcionario (nome,cargo,salario,departamento_id,cod_gerente) values(",funcionario.nome," ,",funcionario.cargo," ,",funcionario.salario," ,",
-funcionario.departamento_id, ");")
-from funcionario
+select concat("insert into funcionario (nome,cargo,salario,coddepartamento,cod_gerente) values(",funcionario.nome," ,",funcionario.cargo," ,",funcionario.salario," ,",
+funcionario.coddepartamento, ");")
+from funcionario;
+
 
