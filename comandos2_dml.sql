@@ -81,6 +81,9 @@ insert into funcionario values(1634650,'seguranca1','seg',10,5405621,null,746541
 insert into funcionario values(1634651,'secretario1','sec',100,5405621,null,7465416);
 insert into funcionario values(7465416,'faxineiro1','faxi',1000,5405621,null,7465416);
 insert into funcionario values(1634652,'professor1','prof',10000,5468126,null,7465416);
+insert into funcionario values(1634653,'maria','prof',5000,5468126,null,7465416);
+insert into funcionario values(1634654,'uelingtown','prof',500,5468126,null,7465416);
+
 
 insert into matricula values(201810420,369084,null);
 insert into matricula values(201810763,369085,null);

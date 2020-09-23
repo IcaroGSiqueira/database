@@ -48,6 +48,12 @@ left join aluno on matricula.matriculaaluno = aluno.matricula
 group by matricula.cod_disciplina
 order by matricula.cod_disciplina;
 
+-- D
+-- select d.id,d.nome, coalesce(count(a.matricula),0) numero_alunos from disciplina d left join matricula m on m.cod_disciplina = d.id
+-- left join aluno a on a.matricula = m.matricula_id
+-- group by d.id
+-- order by d.id;
+
 -- E.
 select aluno.nome, disciplina.nome from aluno right join matricula on aluno.matricula = matricula.matriculaaluno 
 left join disciplina on matricula.cod_disciplina = disciplina.cod 
@@ -62,10 +68,23 @@ order by matricula.matriculaaluno;
 -- Faça retornar na mesma coluna o nome do aluno e o nome da disciplina sem repetições de nomes.
 -- Faça um único select, que reproduza os inserts existentes nas tabelas Funcionário e Aluno, gerando o resultado no formato de script para ser executado em outra base de dados.
 
+-- 01
 
-select funcionario.nome ,  from disciplina right join matricula on disciplina.cod = matricula.cod_disciplina 
-left join aluno on matricula.matriculaaluno = aluno.matricula 
-group by matricula.cod_disciplina
-order by matricula.cod_disciplina;
+-- 02
+select funcionario.nome, funcionario.nome from aluno union all
+select funcionario.nome from funcionario;
 
+-- 03
+select aluno.nome from aluno union
+select funcionario.nome from funcionario;
+
+-- 04
+
+-- 05
+select concat("insert into aluno (nome,telefone,cidade,email,idade) values (", aluno.nome, " ," ,
+aluno.telefone, " ,", aluno.cidade, " ," ,aluno.email, " ,", aluno.cidade, ");")
+from aluno union all 
+select concat("insert into funcionario (nome,cargo,salario,departamento_id,cod_gerente) values(",funcionario.nome," ,",funcionario.cargo," ,",funcionario.salario," ,",
+funcionario.departamento_id, ");")
+from funcionario
 
