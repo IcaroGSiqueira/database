@@ -64,3 +64,4 @@ drop table matricula;
 drop table disciplina;
 drop table funcionario;
 drop table departamento;
+

@@ -28,19 +28,19 @@ left join funcionario on funcionario.coddepartamento = departamento.cod group by
 
 -- C.
 create table faixaNivel(
-	id int auto_increment primary key,
-	nome varchar(200),
-	nivel char(2)
+	cod int auto_increment primary key,
+	menor int(3),
+	maior int(3),
+	nivel char(2),
+	foreign key (matriculaaluno) references aluno (matricula)
 );
-insert into faixaNivel(nome,nivel) select nome, 'A' from aluno
-where idade between 15 and 20;
-insert into faixaNivel(nome,nivel) select nome, 'B' from aluno
-where idade between 21 and 25;
-insert into faixaNivel(nome,nivel) select nome, 'C' from aluno
-where idade between 26 and 30;
-insert into faixaNivel(nome,nivel) select nome, 'D' from aluno
-where idade between 31 and 100;
-select nome, nivel from faixaNivel;
+
+-- insert into faixaNivel(nivel,matriculaaluno) select 'A', matricula  from aluno where idade between 15 and 20;
+-- insert into faixaNivel(nivel,matriculaaluno) select 'B', matricula from aluno where idade between 21 and 25;
+-- insert into faixaNivel(nivel,matriculaaluno) select 'C', matricula from aluno where idade between 26 and 30;
+-- insert into faixaNivel(nivel,matriculaaluno) select 'D', matricula from aluno where idade between 31 and 100;
+
+select aluno.nome, faixaNivel.nivel from aluno left join faixaNivel where aluno.idade BETWEEN menor, maior order by nivel;
 
 -- D.
 select disciplina.nome , count(aluno.matricula) from disciplina right join matricula on disciplina.cod = matricula.cod_disciplina 
